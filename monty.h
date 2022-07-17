@@ -62,7 +62,18 @@ void handle_uerror(int errno, unsigned int line);
 void handle_more_uerror(int errno, unsigned int line);
 void (*pick_func(char *s))(stack_t **, unsigned int);
 unsigned int count_stack(stack_t *stack);
-
+void pop(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
+void sub(stack_t **stack, unsigned int line_number);
+void divide(stack_t **stack, unsigned int line_number);
+void mul(stack_t **stack, unsigned int line_number);
+void mod(stack_t **stack, unsigned int line_number);
+void pchar(stack_t **stack, unsigned int line_number);
+void pstr(stack_t **stack, unsigned int line_number);
+void rotl(stack_t **stack, unsigned int line_number);
+void rotr(stack_t **stack, unsigned int line_number);
 
 #define SUCSS_OP	0
 #define VALID_PARM	0
