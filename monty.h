@@ -1,6 +1,10 @@
 #ifndef _MONTY_H
 #define _MONTY_H
 
+
+#define  _GNU_SOURCE
+#include <stdio.h>
+
 #include <ctype.h>
 #include <fcntl.h>
 #include <stdlib.h>
@@ -39,13 +43,47 @@ typedef struct instruction_s
 } instruction_t;
 
 extern stack_t *head;
-
+#include <stdio.h>
+#include <string.h>
 
 void push(stack_t **stack, unsigned int param);
 void push_queue(stack_t **stack, unsigned int param);
 void pall(stack_t **stack, unsigned int line_number);
+void check_args_num(int argn);
+FILE *open_file(char *filename);
+void check_access_rights(char *filename);
+int check_push_param(char *param);
+int check_digits(char *s);
+void frees_stack(void);
+int handle_execution(char *op_code, char *op_param, unsigned int line, int m);
+void handle_error(int errno, char *opcode, unsigned int line, char *buff);
+void handle_cerror(int errno, char *opcode, unsigned int line);
+void handle_uerror(int errno, unsigned int line);
+void handle_more_uerror(int errno, unsigned int line);
+void (*pick_func(char *s))(stack_t **, unsigned int);
+unsigned int count_stack(stack_t *stack);
 
 
-
+#define SUCSS_OP	0
+#define VALID_PARM	0
+#define MIN_ARGS	2
+#define METH_STACK	300
+#define METH_QUEUE	301
+#define ERR_BAD_INST	100
+#define ERR_BAD_MALL	101
+#define ERR_INVLD_PARM	102
+#define ERR_ARG_USG	200
+#define ERR_PUSH_USG	201
+#define ERR_PINT_USG	202
+#define ERR_POP_USG	203
+#define ERR_SWAP_USG	204
+#define ERR_ADD_USG	205
+#define ERR_SUB_USG	206
+#define ERR_DIV_USG	207
+#define ERR_DIV_ZRO	208
+#define ERR_MUL_USG	209
+#define ERR_MOD_USG	210
+#define ERR_PCH_USG	211
+#define ERR_PCH_EMP	212
 
 #endif
