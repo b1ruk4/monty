@@ -15,7 +15,8 @@ void (*pick_func(char *s))(stack_t **, unsigned int)
 		{ "pall", pall },
 		{ "pint", pint },
 		{ "pop", pop },
-		{ "swap", swap},
+		{ "swap", swap },
+		{ "add", add },
 		{ NULL, NULL }
 	};
 	int i = 0;
