@@ -45,7 +45,7 @@ typedef struct instruction_s
 extern stack_t *head;
 #include <stdio.h>
 #include <string.h>
-
+void pint(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int param);
 void push_queue(stack_t **stack, unsigned int param);
 void pall(stack_t **stack, unsigned int line_number);
