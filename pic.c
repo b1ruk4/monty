@@ -21,6 +21,10 @@ void (*pick_func(char *s))(stack_t **, unsigned int)
 		{ "div", divide },
 		{ "mul", mul },
 		{ "sub", sub},
+		{ "pchar", pchar },
+		{ "pstr", pstr },
+		{ "rotl", rotl },
+		{ "rotr", rotr },
 		{ NULL, NULL }
 	};
 	int i = 0;
