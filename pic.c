@@ -14,12 +14,6 @@ void (*pick_func(char *s))(stack_t **, unsigned int)
 		{ "push_queue", push_queue },
 		{ "pall", pall },
 		{ "pint", pint},
-		{ "pop", pop },
-		{ "swap", swap },
-		{ "add", add },
-		{ "nop", nop },
-		{ "sub", sub },
-		{ "div", divide },
 		{NULL, NULL }
 	};
 	int i = 0;
